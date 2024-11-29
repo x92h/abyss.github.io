@@ -1,0 +1,87 @@
+/* General Styles */
+
+body {
+    font-family: 'Monserrat', SemiBold 600;
+    margin: 0;
+    padding: 0;
+    background-color: #030303;
+    color: #6b6b6b;
+}
+
+header {
+    background-color: #0f0f0f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    height: 50px;
+    width: auto;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #f1f1f1;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Styling for the Privacy Policy larger */
+.intro-text {
+    font-size: 3em; /* Adjust as needed */
+    font-weight: bold;
+    color: #fff; /* White text color */
+    margin-top: 1px;
+}
+/* category text */
+.category {
+    font-size: 3em; /* Adjust as needed */
+    font-weight: bold;
+    color: #fff; /* White text color */
+    margin-top: 1px;
+}
+
+/* Content */
+.content {
+    max-width: 950px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #0f0f0f;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #fff;
+    margin-top: 30px;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+/* Foot
