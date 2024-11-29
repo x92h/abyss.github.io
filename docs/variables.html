@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/nav.css">
+    <link href="css/commands.css" rel="stylesheet">
+    <link href="css/untitled.css" rel="stylesheet">
+    <link href="css/cursor.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/txtformatting.css">
+    <link rel="stylesheet" type="text/css" href="./css/shadow.css">
+    <link rel="stylesheet" type="text/css" href="./css/loading.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="shortcut icon" href="img/abyss.png" type="image/x-icon">
+    <title>Abyss</title>
+</head>
+
+<body class="on">
+<div class="loading" id="loading-box">
+  <div class="loading-item"><div class="loading-progress"></div></div>
+</div>
+<div class="navbar">
+    <div class="container">
+      <div class="navbar-nav">
+        <span class="navbar-toggler" id="toggler"><i onclick="toggleNavbar(this)" class="fas fa-bars"></i></span>
+        <div class="navs" id="navs">
+          <!-- You can change the href value and the text value -->
+          <div class="navs-item notbtn"><a href="index.html" class="text-7xl">Home</a></div>
+          <div class="navs-item notbtn"><a href="commands.html" class="text-7xl">Commands</a></div>
+          <div class="navs-item notbtn"><a href="support.html" class="text-7xl">Support</a></div>
+          <div class="navs-item notbtn"><a href="invite.html" class="text-7xl">Invite</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="container">
+        <div class="mt-4"></div>
+        <div class="row">
+            <div class="col-md-4 my-2">
+                <div class="card p-3">
+                    <h5>Select Variables Category</h5>
+                    <hr />
+                    <button onclick="active(this)" id="CategoryBtnAll" class="text-decoration-none btn btn-primary mt-2 my-1 p-2"><i class="fad fa-icons ttt"></i>&nbsp; All Variables</button>
+                    
+                        <button onclick="active(this)" id="CategoryBtn0" class="text-decoration-none btn btn-primary mt-2 my-1 p-2"><i class='fas fa-gift ttt'></i>&nbsp; Guild Variables</button>
+                    
+                        <button onclick="active(this)" id="CategoryBtn1" class="text-decoration-none btn btn-primary mt-2 my-1 p-2"><i class='fas fa-globe-europe ttt'></i>&nbsp; User Variables</button>
+                    
+                        <button onclick="active(this)" id="CategoryBtn2" class="text-decoration-none btn btn-primary mt-2 my-1 p-2"><i class='fas fa-hammer-war ttt'></i>&nbsp;&nbsp; Scripting</button>
+                    
+                    
+                </div>
+            </div>
+            <div class="col-md-8 my-2">
+                <input type="text" class="w-100 search-box" oninput="search(this.value)" placeholder="Search for variables" />
+                
+                    
+                        <div class="mt-4"></div>
+                    
+                    <div class="commands-section" id="Category0">
+                        
+                            
+                            <div class="accordion accordion-flush mt-2" id="GuildVariables">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingOne">
+                                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#fGuildVariables">
+                                            GuildVariables&nbsp; <span class="command-descreption">- All guild variables</span>
+                                        </button>
+                                    </h2>
+                                    <div id="fGuildVariables" class="accordion-collapse collapse" data-bs-parent="#GuildVariables">
+                                        <div class="accordion-body">
+                                            <span>Variables:</span> <br />
+                                            <span class="examples">
+                                                
+                                                    {guild.name}	The guild’s name<br/>
+                                                    {guild.id}	The guild’s ID<br/>
+                                                    {guild.count}	The guild’s member count<br/>
+                                                    {guild.region}	The guild’s voice region<br/>
+                                                    {guild.created_at}	The guild’s creation date in UTC<br/>
+                                                    {guild.created_at_timestamp}	The guild’s creation date in UNIX<br/>
+                                                    {guild.emoji_count}	The guild’s emoji count<br/>
+                                                    {guild.role_count}	The guild’s role count<br/>
+                                                    {guild.boost_count}	The guild’s boost count<br/>
+                                                    {guild.boost_tier}	The guild’s boost tier, defaults to No Level if none<br/>
+                                                    {guild.preferred_locale}	The guild’s preferred locale<br/>
+                                                    {guild.icon}	The guild’s icon URL as a PNG (possibly N/A)<br/>
+                                                    {guild.banner}	The guild’s banner URL as a PNG (possibly N/A)<br/>
+                                                    {guild.splash}	The guild’s splash URL as a PNG (possibly N/A)<br/>
+                                                    {guild.discovery}	The guild’s discovery splash URL as a PNG (possibly N/A)<br/>
+                                                    {guild.max_presences}	The guild’s max presences amount<br/>
+                                                    {guild.max_members}	The guild’s max members amount<br/>
+                                                    {guild.max_video_channel_users}	The guild’s max video channel users<br/>
+                                                    {guild.afk_timeout}	The guild’s AFK timeout in seconds<br/>
+                                                    {guild.afk_channel}	The guild’s AFK channel (possibly N/A)<br/>
+                                                    {guild.channels}	The guild’s list of text, voice & category channels (possibly N/A)<br/>
+                                                    {guild.channels_count}	The guild’s total channel count<br/>
+                                                    {guild.text_channels}	The guild’s list of text channels<br/>
+                                                    {guild.text_channels_count}	The guild’s text channel count<br/>
+                                                    {guild.voice_channels}	The guild’s list of voice channels<br/>
+                                                    {guild.voice_channels_count}	The guild’s voice channel count<br/>
+                                                    {guild.category_channels}	The guild’s list of category channels<br/>
+                                                    {guild.category_channels_count}	The guild’s category channel count<br/>
+                                                
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                    </div>
+                
+                    
+                    <div class="commands-section" id="Category1">
+                        
+                            
+                        <div class="accordion accordion-flush mt-2" id="UserVariables">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingOne">
+                                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#fUserVariables">
+                                        UserVariables&nbsp; <span class="command-descreption">- All user variables</span>
+                                    </button>
+                                </h2>
+                                <div id="fUserVariables" class="accordion-collapse collapse" data-bs-parent="#UserVariables">
+                                    <div class="accordion-body">
+                                        <span>Variables:</span> <br />
+                                        <span class="examples">
+                                            
+                                            {user}	The user’s name and discriminator<br/>
+                                            {user.id}	The user’s ID<br/>
+                                            {user.mention}	The user’s mention<br/>
+                                            {user.name}	The user’s name<br/>
+                                            {user.tag}	The user’s discriminator<br/>
+                                            {user.avatar}	The user’s profile picture<br/>
+                                            {user.guild_avatar}	The user’s guild profile picture<br/>
+                                            {user.display_avatar}	The user’s available profile picture<br/>
+                                            {user.joined_at}	The user’s guild join date in UTC<br/>
+                                            {user.joined_at_timestamp}	The user’s guild join date in UNIX<br/>
+                                            {user.created_at}	The user’s account creation date in UTC<br/>
+                                            {user.created_at_timestamp}	The user’s account creation date in UNIX<br/>
+                                            {user.display_name}	The user’s current display name<br/>
+                                            {user.boost}	Yes/No if the user is boosting the guild<br/>
+                                            {user.boost_since}	The user’s initial guild boost date<br/>
+                                            {user.boost_since_timestamp}	The user’s initial guild boost date in UNIX<br/>
+                                            {user.color}	The user’s top role hex code<br/>
+                                            {user.top_role}	The user’s top role name, defaults to N/A<br/>
+                                            {user.role_list}	The user’s role list (possibly N/A)<br/>
+                                            {user.role_text_list}	The user’s role list in text (possibly N/A)<br/>
+                                            {user.bot}	Yes/No if the user is a bot<br/>
+                                            {user.badges_icons}	The user’s profile badges with emotes (possibly N/A)<br/>
+                                            {user.badges}	The user’s profile badges in text (possibly N/A)<br/>
+                                            {user.join_position}	The user’s join position<br/>
+                                            {user.join_position_suffix}	The user’s join position with suffix<br/>
+                                            
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                </div>
+                
+                    
+                    <div class="commands-section" id="Category2">
+                        
+                            
+                            <div class="accordion accordion-flush mt-2" id="Information">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingOne">
+                                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#fInformation">
+                                            Information&nbsp; <span class="command-descreption">- General Scripting Info </span>
+                                        </button>
+                                    </h2>
+                                    <div id="fInformation" class="accordion-collapse collapse" data-bs-parent="#Information">
+                                        <div class="accordion-body">
+                                            <span>Scripting Info:</span> <br />
+                                            <span class="examples">
+                                                
+                                                Each parameter in the embed is represented by a key-value pair which is separated by a colon. For example, the title parameter will look like {title: hello {user}}. The {user} is a variable which will be filled in with the user’s display name.<br/><br/>
+
+                                                { begins a parameter.<br/>
+                                                : seperates parameter from content.<br/>
+                                                $v seperates the parameters.<br/>
+                                                } ends a parameter.<br/>
+                                                
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion accordion-flush mt-2" id="Parameters">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingOne">
+                                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#fParameters">
+                                            Parameters&nbsp; <span class="command-descreption">- General Scripting Info </span>
+                                        </button>
+                                    </h2>
+                                    <div id="fParameters" class="accordion-collapse collapse" data-bs-parent="#Parameters">
+                                        <div class="accordion-body">
+                                            <span>Parameters:</span> <br />
+                                            <span class="examples">
+                                                
+                                                url - The embed URL. (https://..)<br/>
+                                                color - The embed color. (#FFFFFF)<br/>
+                                                title - The embed title. (hello {user})<br/>
+                                                description - The embed description. (hello {user})<br/>
+                                                image - The embed image URL. (https://..)<br/>
+                                                thumbnail - The embed thumbnail URL. (https://..)<br/>
+                                                timestamp - The embed timestamp. (NO ARGUMENTS)<br/>
+                                                The following parameters require additional arguments which are separated by &&.<br/>
+                                                
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion accordion-flush mt-2" id="author">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingOne">
+                                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#fauthor">
+                                            author&nbsp; <span class="command-descreption">- Author Embed </span>
+                                        </button>
+                                    </h2>
+                                    <div id="fauthor" class="accordion-collapse collapse" data-bs-parent="#author">
+                                        <div class="accordion-body">
+                                            <span>author:</span> <br />
+                                            <span class="examples">
+                                                
+                                                name - The author’s name.<br/>
+                                                icon - The author’s icon. Optional<br/>
+                                                url - The author’s URL. Optional<br/><br/>
+
+                                                syntax;<br/>
+                                                {author: name && icon && url}<br/><br/>           example;<br/> {author: {user} && {user.avatar}}
+                                                
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion accordion-flush mt-2" id="field">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingOne">
+                                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#ffield">
+                                            field&nbsp; <span class="command-descreption">- Field Embed </span>
+                                        </button>
+                                    </h2>
+                                    <div id="ffield" class="accordion-collapse collapse" data-bs-parent="#field">
+                                        <div class="accordion-body">
+                                            <span>field:</span> <br />
+                                            <span class="examples">
+                                                
+                                                name - The field name.<br/>
+                                                value - The field value.<br/>
+                                                Include inline at the end of the field to make it inline.<br/><br/>
+
+                                                syntax;<br/>
+                                                {field: name && value}<br/><br/>                  exampe;<br/> {field: {user} && this is the value}
+                                                
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion accordion-flush mt-2" id="footer">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingOne">
+                                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#ffooter">
+                                            footer&nbsp; <span class="command-descreption">- Field Embed </span>
+                                        </button>
+                                    </h2>
+                                    <div id="ffooter" class="accordion-collapse collapse" data-bs-parent="#footer">
+                                        <div class="accordion-body">
+                                            <span>footer:</span> <br />
+                                            <span class="examples">
+                                                
+                                                text - The footer text.<br/>
+                                                icon - The footer icon. Optional<br/>
+                                                
+                                                syntax;<br/> 
+                                                {footer: text && icon}<br/><br/>                  example;<br/> {footer: {user}}<br/>
+                                                                                                 {footer: {user} && {user.avatar}}
+                                                
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion accordion-flush mt-2" id="button">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingOne">
+                                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#fbutton">
+                                            button&nbsp; <span class="command-descreption">- button Embed </span>
+                                        </button>
+                                    </h2>
+                                    <div id="fbutton" class="accordion-collapse collapse" data-bs-parent="#button">
+                                        <div class="accordion-body">
+                                            <span>button:</span> <br />
+                                            <span class="examples">
+                                                
+                                                type - Link, Blurple, Green, Grey or Red.<br/>
+                                                label - The button label.<br/>
+                                                url - The button URL or emoji.<br/>
+                                                
+                                                syntax;<br/>
+                                                {button: type && label && url}<br/><br/>          example;<br/> {button: emoji: :link: && test}<br/>
+                                                                                                 {button: url: https://example.com}$v{color: f06000}
+                                                
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                    </div>
+             
+            </div>
+        </div>
+    </div>
+    
+    <input id="commands" value="[{&#34;title&#34;:&#34;&lt;i class=&#39;fas fa-gift ttt&#39;&gt;&lt;/i&gt;&amp;nbsp; Moderation Commands&#34;,&#34;commands&#34;:[&#34;ban&#34;,&#34;kick&#34;,&#34;mute&#34;]},{&#34;title&#34;:&#34;&lt;i class=&#39;fas fa-globe-europe ttt&#39;&gt;&lt;/i&gt;&amp;nbsp; Config Commands&#34;,&#34;commands&#34;:[&#34;help&#34;,&#34;ping&#34;,&#34;invite&#34;]},{&#34;title&#34;:&#34;&lt;i class=&#39;fas fa-hammer-war ttt&#39;&gt;&lt;/i&gt;&amp;nbsp;&amp;nbsp; Information Commands&#34;,&#34;commands&#34;:[&#34;leaderboard&#34;]},{&#34;title&#34;:&#34;&lt;i class=&#39;fas fas fa-crown ttt&#39;&gt;&lt;/i&gt;&amp;nbsp; Utility Commands&#34;,&#34;commands&#34;:[&#34;reactionrole&#34;,&#34;slowmode&#34;]}]" hidden />
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="/fontawesome/all.min.js"></script>
+    <script src="/js/animation.js"></script>
+    <script>
+        function active(elm){
+            document.getElementById("CategoryBtnAll").classList.remove("active");
+            
+                document.getElementById("CategoryBtn0").classList.remove("active");
+                document.getElementById("Category0").setAttribute("hidden", "");
+            
+                document.getElementById("CategoryBtn1").classList.remove("active");
+                document.getElementById("Category1").setAttribute("hidden", "");
+            
+                document.getElementById("CategoryBtn2").classList.remove("active");
+                document.getElementById("Category2").setAttribute("hidden", "");
+            
+            elm.classList.add("active");
+            if(elm.id.replace("CategoryBtn", "") == "All"){
+                
+                    document.getElementById("Category0").removeAttribute("hidden");
+                
+                    document.getElementById("Category1").removeAttribute("hidden");
+                
+                    document.getElementById("Category2").removeAttribute("hidden");
+                
+            }else{
+                document.getElementById("Category" + elm.id.replace("CategoryBtn", "")).removeAttribute("hidden");
+            }
+        }
+        document.getElementById("CategoryBtnAll").click();
+        function search(arg){
+            let commands = JSON.parse(document.getElementById("commands").value);
+            let cmds = [];
+            commands.forEach(category => {
+                category.commands.forEach(command => {
+                    cmds.push(command);
+                })
+            })
+            let existedCmds = cmds.filter(obj => obj.includes(arg.toLowerCase()));
+            cmds.forEach(cmd => {
+                document.getElementById(cmd).setAttribute("hidden", "");
+            })
+            existedCmds.forEach(cmd => {
+                document.getElementById(cmd).removeAttribute("hidden");
+            })
+        }
+    </script>
+    <script type="text/javascript" src="./js/script.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/cursor.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+
+</html>
